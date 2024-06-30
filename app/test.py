@@ -14,7 +14,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 
-engine = create_engine('sqlite:///data/Heathcare.db', echo=False)
+engine = create_engine('sqlite:///info/Heathcare.db', echo=False)
 session = Session(engine)
 Base = automap_base()
 Base.prepare(engine, reflect=True)
@@ -188,4 +188,5 @@ def display_page(pathname):
     
 #Runs the server at http://127.0.0.1:5000/      
 if __name__ == '__main__':
-     app.run_server(port=5000, host= '127.0.0.1',debug=False)
+     app.run_server(port=8080, dev_tools_ui=True, host= '127.0.0.1',debug=False)
+
